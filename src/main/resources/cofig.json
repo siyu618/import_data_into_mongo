@@ -1,0 +1,10 @@
+{
+    "dailyStatMongoHost": "10.111.0.42",
+    "dailyStatMongoPort": 27017,
+    "dailyStatMongoDB": "push",
+    "dailyStatCollection": "daily_stat",
+    "newsStatMongoHost": "10.111.0.42",
+    "newsStatMongoPort": 27017,
+    "newsStatMongoDB": "push",
+    "newsStatCollection": "news_stat"
+}
