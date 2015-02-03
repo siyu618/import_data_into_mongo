@@ -64,7 +64,7 @@ public class ImportFile implements Runnable {
                 BasicDBObject update = new BasicDBObject();
                 update.put("expire_at", DateUtil.incrDate(new Date(), 60));
                 for (String str : json.keySet()) {
-                    update(str, json.get(str), update);
+                    update.append(str, json.get(str));
                 }
                 BasicDBObject set = new BasicDBObject();
                 set.put("$set", update);
@@ -78,12 +78,13 @@ public class ImportFile implements Runnable {
                 BasicDBObject update = new BasicDBObject();
                 update.put("expire_at", DateUtil.incrDate(new Date(), 60));
                 for (String str : json.keySet()) {
-                    update(str, json.get(str), update);
+                    update.append(str, json.get(str));
                 }
                 BasicDBObject set = new BasicDBObject();
                 set.put("$set", update);
                 BasicDBObject query = new BasicDBObject();
                 query.put("_id", processingDay);
+                //System.out.println(GsonFactory.getDefaultGson().toJson(set));
                 dailyStat.update(query, set, true, false);
             }
         }

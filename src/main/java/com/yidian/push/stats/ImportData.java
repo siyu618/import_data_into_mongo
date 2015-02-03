@@ -14,7 +14,8 @@ import java.util.concurrent.Executors;
 public class ImportData {
     public static void main(String[] args) throws IOException {
         if (args.length < 3) {
-            System.out.println("Usage : ImportData <config_file> <processing_file>  <file> [<file1> ...]");
+            System.out.println("Usage : ImportData <config_file> <processing_day>  <file> [<file1> ...]");
+            System.exit(-1);
         }
         String configFile = args[0];
         String processingDay = args[1];
